@@ -1,0 +1,55 @@
+.conteudo{
+    display:grid;
+    align-content:center; /*alinhamento geral dos elementos verticalmente no centro*/
+    justify-items: center; /*para centralizar os filhos individualmente*/
+}
+
+#header {
+    color: #34D0AD; /*cor do texto do título*/
+    text-align:center;  /*título alinhado no centro horizontalmente*/
+}
+
+.paragrafo {
+    border: 3px solid #34D0AD;  /*border de 3 pixeis nos parágrafos, com a cor especificada*/
+    height:fit-content; /*altura e largura correspondem ao tamanho do conteúdo*/
+    width:fit-content; 
+}
+
+.grid {
+    display:grid;
+    justify-content:space-evenly; /*itens tem espaço igual entre eles*/
+}
+
+#autor { 
+     color: #34D0AD; /*cor do texto*/
+     border: 3px solid black; /*border preta e sólida de 3 pixeis*/
+     border-radius: 25px; /*faz a borda ser curvada*/
+     padding: 10px; /*padding para que o texto não fique muito perto da borda*/
+     width:fit-content; /*largura é o tamanho necessário para caber o conteúdo*/
+     
+}
+
+/*Usando media queries para responsividade*/
+
+@media (min-width: 769px) { /*para telas maiores, como computadores*/
+    .grid {
+        width: 90vw;  /*a largura é 90% da viewport width (largura da janela de visualização)*/
+        grid-template-columns: auto auto; /*define o tamanho das duas colunas como auto, ou seja, cada coluna adequa ao tamanho do conteudo*/
+    }
+}
+
+@media (max-width: 768px) { /*para dispositivos médios, como tablets*/
+    .grid {
+        grid-template-columns: 1fr; /* uma única coluna */
+        justify-items: center; /*para centralizar os filhos individualmente*/
+    }
+
+}
+
+@media (max-width: 480px) { /*para telas pequenas,como celulares*/
+    .conteudo {
+        grid-template-columns: 1fr; /* uma única coluna */
+        justify-items: center; /*para centralizar os filhos individualmente*/
+        font-size:small; /*diminui tamanho da fonte para paragrafos ficarem menores*/
+    }
+}
